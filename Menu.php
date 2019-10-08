@@ -45,35 +45,54 @@
         }
         
         body {
+          margin: 0;
           font-family: Arial, Helvetica, sans-serif;
         }
         
-        /* Float four columns side by side */
+        .header {
+          text-align: center;
+          padding: 32px;
+        }
+
+        .row {
+          display: -ms-flexbox; /* IE10 */
+          display: flex;
+          -ms-flex-wrap: wrap; /* IE10 */
+          flex-wrap: wrap;
+          padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
         .column {
-          float: left;
-          width: 25%;
-          padding: 0 10px;
+          -ms-flex: 25%; /* IE10 */
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
         }
-        
-        /* Remove extra left and right margins, due to padding */
-        .row {margin: 0 -5px;}
-        
-        /* Clear floats after the columns */
-        .row:after {
-          content: "";
-          display: table;
-          clear: both;
+
+        .column img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
         }
-        
-        /* Responsive columns */
-        @media screen and (max-width: 600px) {
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
           .column {
-            width: 100%;
-            display: block;
-            margin-bottom: 20px;
+            -ms-flex: 50%;
+            flex: 50%;
+            max-width: 50%;
           }
         }
-        
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column {
+            -ms-flex: 100%;
+            flex: 100%;
+            max-width: 100%;
+          }
+        }
         /* Style the counter cards */
         .card {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -81,6 +100,13 @@
           text-align: center;
           background-color: #f1f1f1;
         }
+
+
+        
+
+
+
+
         </style>
 </head>
 
@@ -115,36 +141,53 @@
     global $con;
     $get_pro = "select * from $tablename";
     $run_pro = mysqli_query($con, $get_pro);
+    $rowcount =0;
+   
+    
     while($row_pro=mysqli_fetch_array($run_pro)){
+       
         $cid = $row_pro['cid'];
         $cname = $row_pro['cname'];
         $chalfkg = $row_pro['chalfkg'];
         $c1kg = $row_pro['c1kg'];
         $desc = $row_pro['description'];
-      echo "
-      
-      <div class='col-md-4 col-sm-4 col-xs-4'>
 
-       <h3>$cname</h3>
-       <p><img src='assets/img/Assorted Cakes/Loaded Chocolate.jpg' width='200' height='200'/></p>
-       <p><b>PRICE Half Kg: INR $chalfkg</b></p>
-       <p><b>PRICE 1Kg : INR $c1kg</b></p>
-       <a href='#'><button style='float:center; padding-top:10px;  border: 1px solid #FB8F3D; 
-          background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
-          background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
-          background: -ms-linear-gradient(top, #FDA251, #FB8F3D); width:80px; height:30px;
-          width=50px;
-          padding: 0px;
-          '>+Cart</button></a>
-       </div>
-       <br>
-       <br>
-      
-      ";
+        if($rowcount == 0){
+          echo "<div class = 'row' style='width:100%;'>";
+        }
 
+        echo "<div class='column'>
+                <div class='card'>
+                  <h3>$cname</h3>
+                  <p><img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/></p>
+                  <p name='$cid'><b>PRICE Half Kg: $chalfkg</b>  <button name='ord_hf' style='float:center; padding-top:10px;  border: 1px solid #FB8F3D; 
+                  background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
+                  background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
+                  background: -ms-linear-gradient(top, #FDA251, #FB8F3D); width:80px; height:30px;
+                  width=50px;
+                  padding: 0px;
+                  '>+Cart</button></p>
+                  <p name='$cid'><b>PRICE 1 Kg: $c1kg</b>  <button name='ord_full' style='float:center; padding-top:10px;  border: 1px solid #FB8F3D; 
+                    background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
+                    background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
+                    background: -ms-linear-gradient(top, #FDA251, #FB8F3D); width:80px; height:30px;
+                    width=50px;
+                    padding: 0px;
+                    '>+Cart</button></p>
+                </div>
+              </div>";
+        $rowcount++;
+        if($rowcount == 4){
+          echo "</div>";
+          $rowcount = 0;
+        }
+        
+        
+
+      
       }
-      }		    
-      ?>
+    }		    
+    ?>
       </div>
 
         
