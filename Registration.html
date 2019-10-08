@@ -39,25 +39,25 @@
     </nav>
     <div class="row register-form" style="padding-top: 37px;background-color: #f1f7fc;">
         <div class="col-md-8 offset-md-2">
-            <form class="custom-form" action="reg.php" method="post">
+            <form class="custom-form" action="reg.php" method="POST">
                 <h1>Register Form</h1>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Name </label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" type="text"></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="text" id="name" name="name"></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Email </label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" type="email"></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="email" id="email" name="email"></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Password </label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" type="password"></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="password" id="password" name="password"></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Repeat Password </label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" type="password"></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="password" name="reppassword" id="reppassword"></div>
                 </div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">I've read and accept the terms and conditions</label></div><button class="btn btn-light submit-button" type="button" style="background-image: linear-gradient(to right, rgba(241, 173, 252, 0.59), rgba(181, 174, 251, 0.53));">Register</button></form>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">I've read and accept the terms and conditions</label></div><button class="btn btn-light submit-button" type="submit-button" style="background-image: linear-gradient(to right, rgba(241, 173, 252, 0.59), rgba(181, 174, 251, 0.53));">Register</button></form>
         </div>
     </div>
     <footer id="myFooter" style="padding-top: 22px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
