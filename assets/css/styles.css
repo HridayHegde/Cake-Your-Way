@@ -1,0 +1,57 @@
+.navbar.navbar-light.navbar-expand-md {
+  background-image: linear-gradient(to right, rgba(241, 173, 252, 0.59), rgba(181, 174, 251, 0.53));
+}
+
+.head-text {
+  position: relative;
+  /*height: 45px;*/
+  /*left: 557px;*/
+  top: 50px;
+  font-family: Lobster Two;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 45px;
+  /* identical to box height */display: flex;
+  /*align-items: center;*/
+  text-align: center;
+  letter-spacing: 0.05em;
+  background: linear-gradient(to right, #AC3B61 0%, rgba(83, 89, 254, 0.82) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.body-text {
+  font-family: Maven Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  /* or 167% */display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.button-style-h {
+  background: linear-gradient(to right, rgba(235, 148, 250, 0.76) 0%, rgba(143, 134, 250, 0.55) 100%);
+  border-radius: 20px;
+}
+
+.main-images {
+}
+
+.text-center.flex-shrink-1.flex-fill {
+}
+
+:root {
+}
+
+body, html {
+  overflow: auto!important;
+  max-height: 100% !important;
+}
+
+.row.text-center.row-footer-first {
+  margin-bottom: 40px;
+}
+
