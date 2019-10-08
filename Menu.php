@@ -93,7 +93,7 @@
                     <ul class="nav navbar-nav">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: bold;">Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html" style="font-weight: normal;">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.html"><strong>Menu</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
                     </ul>
@@ -109,23 +109,26 @@
 <section class="menusec" style="padding-top: 5%;margin-top: 58px;width: 100%;"></section>
 <div class='row'>
   <?php
-  if(!isset($_GET['product_women'])){
+  $tablename = 'assorted_cakes';
+  if(!isset($_GET[$tablename])){
   
     global $con;
-    $get_pro = "select * from product_women";
+    $get_pro = "select * from $tablename";
     $run_pro = mysqli_query($con, $get_pro);
     while($row_pro=mysqli_fetch_array($run_pro)){
-  $pro_id = $row_pro['p_id'];
-  $pro_title = $row_pro['p_title'];
-  $pro_price = $row_pro['p_price'];
-  $pro_image = $row_pro['p_image'];
+        $cid = $row_pro['cid'];
+        $cname = $row_pro['cname'];
+        $chalfkg = $row_pro['chalfkg'];
+        $c1kg = $row_pro['c1kg'];
+        $desc = $row_pro['description'];
       echo "
       
       <div class='col-md-4 col-sm-4 col-xs-4'>
 
-       <h3>$pro_title</h3>
-       <p><img src='../assets/$pro_image' width='200' height='200'/></p>
-       <p><b>PRICE: INR $pro_price</b></p>
+       <h3>$cname</h3>
+       <p><img src='assets/img/Assorted Cakes/Loaded Chocolate.jpg' width='200' height='200'/></p>
+       <p><b>PRICE Half Kg: INR $chalfkg</b></p>
+       <p><b>PRICE 1Kg : INR $c1kg</b></p>
        <a href='#'><button style='float:center; padding-top:10px;  border: 1px solid #FB8F3D; 
           background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
           background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
