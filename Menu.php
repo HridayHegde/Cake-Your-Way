@@ -233,7 +233,9 @@
         
       
     </section>
-
+    <div id="footerofpage">
+            <?php include('footer.html');?>
+    </div>
            
     
     
