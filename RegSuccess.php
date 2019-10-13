@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
+
+
+<script>
+   
+</script>
 </head>
 
 <body>
@@ -41,7 +46,10 @@
         <h5 class="text-center d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-md-center justify-content-lg-center justify-content-xl-center head-text" style="margin-top: 10%;" align="center">Registered Successfully</h5>
     </div>
     <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button class="btn btn-primary text-center center-block button-style-h" type="button" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;">Home</button></div>
-    <footer
+    
+    <div id="footerofpage">
+        <?php include('footer.html');?>
+    <!--<footer
         id="myFooter" style="padding-top: 22px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
         <div class="container-fluid">
             <div class="row text-center row-footer-first">
@@ -87,7 +95,9 @@
                 </div>
             </div>
         </div>
-        </footer>
+        </footer>-->
+
+    </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

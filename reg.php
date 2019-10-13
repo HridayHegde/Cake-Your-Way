@@ -23,7 +23,8 @@ $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $sql = "INSERT INTO users (username, email, password) VALUES ('$name', '$email', '$password')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
-	echo "added : ","email : $email ","Name : $name ","password : $password";
+    echo "added : ","email : $email ","Name : $name ","password : $password";
+    echo "<script> window.location.assign('RegSuccess.php')</script>";	
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }

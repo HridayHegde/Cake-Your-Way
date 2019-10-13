@@ -1,5 +1,5 @@
 <?php
-  
+ 
   $servername = "den1.mysql4.gear.host";
   $username = "makeyourcakedb";
   $password = "hriday@123";
@@ -8,12 +8,10 @@
   $con = mysqli_connect($servername, $username, $password,$dbname);
 
 ?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <!--pre links-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Cake_Your_Way</title>
@@ -32,16 +30,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
 
-    <!--special sheet-->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    
-    
-    <!--php-->
-    
-<style>
-        * {
+    <style>
+         * {
           box-sizing: border-box;
         }
         
@@ -101,81 +91,31 @@
           text-align: center;
           background-color: #f1f1f1;
         }
-        </style>
-
-<!--scripts-->
-
-<script>
-  var cakeidhf;
-  var cakeidfl;
- function ordhalf(elm){
-    cakeidhf = elm.parentNode.id;
-    jQuery.ajax({
-    type: "POST",
-    url: 'ordhalf.php',
-    dataType: 'json',
-    data: {id: cakeidhf},
-
-    success: function (obj, textstatus) {
-                  if( !('error' in obj) ) {
-                      console.log("added to cart");
-                  }
-                  else {
-                      console.log(obj.error);
-                  }
-            }
-});
-
- }
- function ordfull(elm){
-  cakeidfl = elm.parentNode.id;
-    jQuery.ajax({
-    type: "POST",
-    url: 'ordfull.php',
-    dataType: 'json',
-    data: {id: cakeidfl},
-
-    success: function (obj, textstatus) {
-                  if( !('error' in obj) ) {
-                      console.log("added to cart");
-                  }
-                  else {
-                      console.log(obj.error);
-                  }
-            }
-});
- }
-
-</script>
-
+    </style>
 </head>
 
-<body id="bod">
+<body>
     <nav class="navbar navbar-light navbar-expand-md fixed-top flex-fill navbar-fixed-top" style="background-color: #ffffff;">
         <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="padding-right: 12px;margin-right: 5px;"><span class="sr-only" style="padding-right: 0px;">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <a
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: bold;">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html" style="font-weight: normal;">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: normal;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.html">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
                     </ul>
                 </div>
         </div>
     </nav>
-    <div>
-        <h1 class="text-center float-none d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: auto;padding-top: 0.5%;">Menu</h1>
+    <div style="margin-top: 8%;">
+        <center><img style="width:5%; height:5%;" src="assets/icons/canvas.svg"/></center>
     </div>
-    
-    
-<!------ Include the above in your HEAD tag ---------->
-<section class="menusec" style="padding-top: 5%;margin-top: 58px;width: 100%;"></section>
-<div class='row'>
+    <div class='row'>
   <?php
-  $tablename = 'assorted_cakes';
+  $tablename = 'cart';
   if(!isset($_GET[$tablename])){
   
     global $con;
@@ -186,57 +126,111 @@
     
     while($row_pro=mysqli_fetch_array($run_pro)){
        
+        
+        $cidcart = $row_pro['cid'];
+        
+        $cquant = $row_pro['quant'];
+        $cidm=0;
+        $cname0="";
+        $chalfkg=0;
+        $c1kg=0;
+        $desc="";
+
+        $get_cakes = "select * from assorted_cakes where cid =$cid";
+        $run_cakes = mysqli_query($con, $get_cakes);
+       
+        $row_do=mysqli_fetch_array($run_cakes);
+        echo $row_do;
+
+            $cid = $row_do['cid'];
+            $cname = $row_do['cname'];
+            $chalfkg = $row_do['chalfkg'];
+            $c1kg = $row_do['c1kg'];
+            $desc = $row_do['description'];
+
+        //} 
+        
         $cid = $row_pro['cid'];
-        $cname = $row_pro['cname'];
-        $chalfkg = $row_pro['chalfkg'];
-        $c1kg = $row_pro['c1kg'];
-        $desc = $row_pro['description'];
+        $cquant = $row_pro['quant'];
+        if($cid != ""){
+          if($cquant == 0){
+              echo " <div class = 'row' style='width:100%;'>
+                      
+                          <div class='column'>
+                          <div class='card'>
+                              <img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/>
+                          
+                          </div>
+                          </div>
+                          <div class='column'>
+                          <div class='card'>
+                          <p><h3>$cname</h3><br>
+                              <p>$desc</p>
+                          </p>
+                          
+                          </div>
+                          </div>
+                          <div class='column'>
+                          <div class='card'>
+                          <center><h4>Quantity</h4><br>
+                              <h3>1 KG</h3>
+                          
+                          </center>
+                          
+                          </div>
+                          </div>
+                          </div>
+                      ";
+              
+          
+          }else{
+              
+      
+              echo " <div class = 'row' style='width:100%;'>
+              
+                  <div class='column'>
+                  <div class='card'>
+                      <img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/>
+                  
+                  </div>
+                  </div>
+                  <div class='column'>
+                  <div class='card'>
+                  <p><h3>$cname</h3><br>
+                      <p>$desc</p>
+                  </p>
+                  
+                  </div>
+                  </div>
+                  <div class='column'>
+                  <div class='card'>
+                  <center><h4>Quantity</h4><br>
+                      <h3>Half KG</h3>
+                  
+                  </center>
+                  
+                  </div>
+                  </div>
+                  </div>
+              ";
 
-        if($rowcount == 0){
-          echo "<div class = 'row' style='width:100%;'>";
-        }
+          
 
-        echo "<div class='column'>
-                <div class='card'>
-                  <h3>$cname</h3>
-                  <p><img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/></p>
-                  <p id='$cid'><b>PRICE Half Kg: $chalfkg</b> <button onClick='ordhalf(this)' name='ord_hf' style='float:center; padding-top:10px;  border: 1px solid #FB8F3D; 
-                  background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
-                  background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
-                  background: -ms-linear-gradient(top, #FDA251, #FB8F3D); width:80px; height:30px;
-                  width=50px;
-                  padding: 0px;
-                  '>+Cart</button></p>
-                  <p id='$cid'><b>PRICE 1 Kg: $c1kg</b>  <button onClick='ordfull(this)' name='ord_full' style='float:center; padding-top:10px;  border: 1px solid #FB8F3D; 
-                    background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
-                    background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
-                    background: -ms-linear-gradient(top, #FDA251, #FB8F3D); width:80px; height:30px;
-                    width=50px;
-                    padding: 0px;
-                    '>+Cart</button></p>
-                </div>
-              </div>";
-        $rowcount++;
-        if($rowcount == 4){
-          echo "</div>";
-          $rowcount = 0;
-        }
         
         
-
+          }	
       
       }
-    }		    
+    }	   
+} 
     ?>
       </div>
 
         
       
     </section>
+    <>
 
-           
-    
-    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
