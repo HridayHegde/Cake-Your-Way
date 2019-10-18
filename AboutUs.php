@@ -28,11 +28,11 @@
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.html">Menu</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html" style="font-weight: bold;">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php" style="font-weight: bold;">About Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>
@@ -60,52 +60,10 @@
         </section>
     </div>
     </div>
-    <footer id="myFooter" style="padding-top: 22px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
-        <div class="container-fluid">
-            <div class="row text-center row-footer-first">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <h1 class="logo" style="margin-top:30px;"><a href="#" style="font-size: 36px;">&nbsp;Cake:Your Way</a></h1>
-                </div>
-                <div class="col-12 col-sm-6 col-md-2">
-                    <h5>Get started</h5>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Downloads<br></a></li>
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Other Links</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-md-2">
-                    <h5>Our Company</h5>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Company Information<br></a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Contacts</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-2">
-                    <h5>Support</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help Desk<br></a></li>
-                        <li><a href="#">Forums</a></li>
-                        <li><a href="#">External Links</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 social-networks">
-                    <div></div><a class="facebook" href="#"><i class="fa fa-facebook"></i></a><a class="twitter" href="#"><i class="fa fa-twitter"></i></a><a class="google" href="#"><i class="fa fa-google-plus"></i></a><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                    <button
-                        class="btn btn-primary" style="margin-top:20px;" type="button">Contact us</button>
-                </div>
-            </div>
-            <div class="row footer-copyright">
-                <div class="col">
-                    <p>© 2019 Copyright Text ~ Designed By&nbsp;<a href="#">Gods</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footerofpage">
+            <?php include('footer.html');?>
+    </div>
+   
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

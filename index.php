@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
+<script>
+    function home(){
+        window.location.assign('MakeYourCake.php');
+    }
+</script>
 </head>
 
 <body class="text-center flex-grow-1" style="background-image: url(&quot;assets/img/Group%208.png&quot;); background-repeat: no-repeat;">
@@ -28,11 +33,11 @@
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: bold;">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html" style="font-weight: normal;">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.html">Menu</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: bold;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>
@@ -70,7 +75,7 @@
         </div>
         <div class="d-xl-flex" style="padding-bottom: 37px;">
             <p class="text-left d-xl-flex flex-shrink-1 flex-fill mx-auto justify-content-xl-center body-text" style="width: auto;margin: 50px;margin-top: 65px;margin-right: 0;margin-bottom: 0;line-height: 30px;max-width: 65%;">"Cake&nbsp;is a form of sweet food made from flour, sugar, and other ingredients, that is usually&nbsp;baked. In their oldest forms, cakes were &nbsp;modifications of&nbsp;breads, but cakes now cover a wide range of &nbsp;preparations that
-                can be simple or elaborate, and that share features with other desserts such as&nbsp;pastries, meringues, custards, and pies."<br></p><button class="btn btn-primary text-center d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center mx-auto justify-content-sm-center align-items-sm-center align-content-sm-center ml-sm-auto justify-content-md-center align-items-md-center align-content-md-center align-items-lg-center align-content-lg-center align-content-xl-center button-style-h"
+                can be simple or elaborate, and that share features with other desserts such as&nbsp;pastries, meringues, custards, and pies."<br></p><button onClick="home()" class="btn btn-primary text-center d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center mx-auto justify-content-sm-center align-items-sm-center align-content-sm-center ml-sm-auto justify-content-md-center align-items-md-center align-content-md-center align-items-lg-center align-content-lg-center align-content-xl-center button-style-h"
                 type="button" style="margin: 0px;margin-right: 10%;margin-top: 6%;width: 275px;color: #000000;font-size: 20px;font-weight: normal;height: 67.56px;line-height: 0px;">Make your cake<br><br></button></div>
     </div>
     <div class="flex-shrink-1 flex-fill" style="background-image: url(&quot;assets/img/Group%208.png&quot;);padding-bottom: 0;">
@@ -106,52 +111,10 @@
             </div>
         </div>
     </section>
-    <footer id="myFooter" style="padding-top: 22px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
-        <div class="container-fluid">
-            <div class="row text-center row-footer-first">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <h1 class="logo" style="margin-top:30px;"><a href="#" style="font-size: 36px;">&nbsp;Cake:Your Way</a></h1>
-                </div>
-                <div class="col-12 col-sm-6 col-md-2">
-                    <h5>Get started</h5>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Downloads<br></a></li>
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Other Links</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-md-2">
-                    <h5>Our Company</h5>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Company Information<br></a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Contacts</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-2">
-                    <h5>Support</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help Desk<br></a></li>
-                        <li><a href="#">Forums</a></li>
-                        <li><a href="#">External Links</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 social-networks">
-                    <div></div><a class="facebook" href="#"><i class="fa fa-facebook"></i></a><a class="twitter" href="#"><i class="fa fa-twitter"></i></a><a class="google" href="#"><i class="fa fa-google-plus"></i></a><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                    <button
-                        class="btn btn-primary" style="margin-top:20px;" type="button">Contact us</button>
-                </div>
-            </div>
-            <div class="row footer-copyright">
-                <div class="col">
-                    <p>© 2019 Copyright Text ~ Designed By&nbsp;<a href="#">Gods</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footerofpage">
+            <?php include('footer.html');?>
+    </div>
+    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
