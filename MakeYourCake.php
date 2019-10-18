@@ -1,3 +1,12 @@
+<?php 
+    
+    $servername = "den1.mysql4.gear.host";
+    $username = "makeyourcakedb";
+    $password = "hriday@123";
+    $dbname = "makeyourcakedb";
+
+    $con = mysqli_connect($servername, $username, $password,$dbname);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -28,11 +37,11 @@
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: normal;">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html" style="font-weight: bold;">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: normal;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: bold;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>

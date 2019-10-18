@@ -101,11 +101,11 @@
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: normal;">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.html">Menu</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: normal;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>
@@ -113,7 +113,7 @@
     <div style="margin-top: 8%;">
         <center><img style="width:5%; height:5%;" src="assets/icons/canvas.svg"/></center>
     </div>
-    <div class='row'>
+    
   <?php
   $tablename = 'cart';
   if(!isset($_GET[$tablename])){
@@ -121,26 +121,38 @@
     global $con;
     $get_pro = "select * from $tablename";
     $run_pro = mysqli_query($con, $get_pro);
+    if (!$run_pro) {
+      printf("Error: %s\n", mysqli_error($con));
+      exit();
+  }
     $rowcount =0;
-   
+    //$result = mysqli_query($con,"SELECT * FROM user_list where username = '" . mysqli_real_escape_string($con, $username) . "'"); 
+    
     
     while($row_pro=mysqli_fetch_array($run_pro)){
-       
+      
         
         $cidcart = $row_pro['cid'];
-        
+       
         $cquant = $row_pro['quant'];
+
+        $get_cakes = "select * from assorted_cakes where cid =$cidcart";
+       
         $cidm=0;
         $cname0="";
         $chalfkg=0;
         $c1kg=0;
         $desc="";
-
-        $get_cakes = "select * from assorted_cakes where cid =$cid";
+        
+        
         $run_cakes = mysqli_query($con, $get_cakes);
+        if (!$run_cakes) {
+          printf("Error inner: %s\n", mysqli_error($con));
+          
+      }
        
         $row_do=mysqli_fetch_array($run_cakes);
-        echo $row_do;
+       
 
             $cid = $row_do['cid'];
             $cname = $row_do['cname'];
@@ -152,32 +164,34 @@
         
         $cid = $row_pro['cid'];
         $cquant = $row_pro['quant'];
-        if($cid != ""){
+        if($cname != ""){
           if($cquant == 0){
               echo " <div class = 'row' style='width:100%;'>
                       
                           <div class='column'>
-                          <div class='card'>
+                         
                               <img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/>
                           
+                          
                           </div>
-                          </div>
+                          <hr>
                           <div class='column'>
-                          <div class='card'>
+                          
                           <p><h3>$cname</h3><br>
                               <p>$desc</p>
                           </p>
                           
+                          
                           </div>
-                          </div>
+                          <hr>
                           <div class='column'>
-                          <div class='card'>
+                          
                           <center><h4>Quantity</h4><br>
                               <h3>1 KG</h3>
                           
                           </center>
                           
-                          </div>
+                          
                           </div>
                           </div>
                       ";
@@ -221,10 +235,11 @@
           }	
       
       }
-    }	   
+    }
+       
 } 
     ?>
-      </div>
+      
 
         
       

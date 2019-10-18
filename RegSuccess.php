@@ -22,7 +22,9 @@
 
 
 <script>
-   
+   function redirect(){
+    window.location.assign('index.php');
+   }
 </script>
 </head>
 
@@ -33,11 +35,11 @@
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-weight: normal;">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html" style="font-weight: bold;">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: normal;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: bold;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>
@@ -45,7 +47,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <h5 class="text-center d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-md-center justify-content-lg-center justify-content-xl-center head-text" style="margin-top: 10%;" align="center">Registered Successfully</h5>
     </div>
-    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button class="btn btn-primary text-center center-block button-style-h" type="button" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;">Home</button></div>
+    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button onClick="redirect()" class="btn btn-primary text-center center-block button-style-h" type="button" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;">Home</button></div>
     
     <div id="footerofpage">
         <?php include('footer.html');?>

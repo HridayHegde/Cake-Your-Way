@@ -28,11 +28,11 @@
                 class="navbar-brand d-sm-flex mr-auto" href="#"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.html">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.html">Menu</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.html" style="font-weight: bold;">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php" style="font-weight: bold;">About Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>
