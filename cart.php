@@ -1,5 +1,13 @@
 <?php
+session_start();
  
+ if(!isset($_SESSION)){
+  echo "<script>window.location.assign('Login.php');</script>";
+}else{
+  $sessionusrname = $_SESSION['username'];
+  echo "<script>$('#login').attr('href','logout.php');";
+  echo "$('#login').text('Logout');</script>";
+}
   $servername = "den1.mysql4.gear.host";
   $username = "makeyourcakedb";
   $password = "hriday@123";

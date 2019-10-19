@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION)){
+$email = $_SESSION['username'];
 header('Content-Type: application/json');
     $name = $_POST['id'];
     echo "<script>alert('$name')</script>";
@@ -12,9 +15,9 @@ header('Content-Type: application/json');
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-  $sql = "INSERT INTO cart (cid,quant) VALUES ($name,0)";
+  $sql = "INSERT INTO cart (cid,quant,username) VALUES ($name,0,$email)";
   mysqli_query($con, $sql);
 
-echo "jhale re";
- 
+
+}
 ?>

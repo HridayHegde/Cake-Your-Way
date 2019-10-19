@@ -1,5 +1,14 @@
 <?php 
-    
+session_start();
+
+    if(!isset($_SESSION)){
+        echo "<script>window.location.assign('Login.php');</script>";
+    }else{
+        $sessionusrname = $_SESSION['username'];
+        echo "<script>$('#login').attr('href','logout.php');";
+        echo "$('#login').text('Logout');</script>";
+    }
+
     $servername = "den1.mysql4.gear.host";
     $username = "makeyourcakedb";
     $password = "hriday@123";
@@ -50,69 +59,29 @@
         <h5 class="text-center float-none d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: 100%;padding-top: 36px;padding-bottom: 64px;">Customize Your Cake</h5>
     </div>
     <section>
-        <div class="row">
-            <div class="col" style="margin-bottom: 3px;">
-                <h4 class="text-center" style="font-family: 'Lobster Two', cursive;margin-top: 7%;">Select your base:</h4>
-            </div>
-            <div class="col">
-                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);width: 400px;align-items: center;align-content: center;align-self: center;margin-left: 13%;margin-top: 7%;margin-bottom: 7%;">Select&nbsp;</button>
-                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col" style="margin-bottom: 3px;">
-                <h4 class="text-center" style="font-family: 'Lobster Two', cursive;margin-top: 7%;">Select your cream:</h4>
-            </div>
-            <div class="col">
-                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);width: 400px;align-items: center;align-content: center;align-self: center;margin-left: 13%;margin-top: 7%;margin-bottom: 7%;">Select&nbsp;</button>
-                    <div
-                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col" style="margin-bottom: 3px;">
-                <h4 class="text-center" style="font-family: 'Lobster Two', cursive;margin-top: 7%;">Select your toppings:</h4>
-            </div>
-            <div class="col">
-                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);width: 400px;align-items: center;align-content: center;align-self: center;margin-left: 13%;margin-top: 7%;margin-bottom: 7%;">Select&nbsp;</button>
-                    <div
-                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col" style="margin-bottom: 3px;">
-                <h4 class="text-center" style="font-family: 'Lobster Two', cursive;margin-top: 7%;">Size of the cake:</h4>
-            </div>
-            <div class="col">
-                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);width: 400px;align-items: center;align-content: center;align-self: center;margin-left: 13%;margin-top: 7%;margin-bottom: 7%;">Select&nbsp;</button>
-                    <div
-                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col" style="margin-bottom: 3px;">
-                <h4 class="text-center" style="font-family: 'Lobster Two', cursive;margin-top: 7%;">Shape of the cake:</h4>
-            </div>
-            <div class="col">
-                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);width: 400px;align-items: center;align-content: center;align-self: center;margin-left: 13%;margin-top: 7%;margin-bottom: 7%;">Select&nbsp;</button>
-                    <div
-                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col" style="margin-bottom: 3px;">
-                <h4 class="text-center" style="font-family: 'Lobster Two', cursive;margin-top: 7%;">Select a tier:</h4>
-            </div>
-            <div class="col">
-                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);width: 400px;align-items: center;align-content: center;align-self: center;margin-left: 13%;margin-top: 7%;margin-bottom: 7%;">Select&nbsp;</button>
-                    <div
-                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-            </div>
+        <div class="row" style="width:100%;">
+            <div class="column"><center><h4>Size of The Cake : </h4></center></div>
+         <div class="column">   
+        <center><select name="sizeofcake">
+        <?php
+            $tablename = 'cake_sizes';
+            if(!isset($_GET[$tablename])){
+            
+              global $con;
+              $get_pro = "select * from $tablename";
+              $run_pro = mysqli_query($con, $get_pro);
+              $rowcount =0;
+             
+              
+              while($row_pro=mysqli_fetch_array($run_pro)){
+                    $size = $row_pro['size'];    
+                echo "<option value=$size>$size</option>";
+
+              }
+            }
+        ?>
+
+        </select></center>
         </div>
         </div>
     </section>

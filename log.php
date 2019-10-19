@@ -25,12 +25,15 @@ $result = mysqli_query($link, $sql);
 $num = mysqli_num_rows($result);
 if($num == 1){
     echo "<script> alert('login succesfully!')</script> ";	
-    echo "<script> window.location.assign('index.html')</script>";	
+    echo "<script> window.location.assign('index.php')</script>";	
     echo "<script>  checklog($email);  </script> ";
+   
+
+    $_SESSION['username']= $email;
 }
 else{
     echo "<script> alert('invalid login')</script>";
-    echo "<script> window.location.assign('login.html')</script>";	
+    echo "<script> window.location.assign('Login.php')</script>";	
 }
 // Close connection
 mysqli_close($link);

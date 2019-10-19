@@ -1,5 +1,5 @@
 <?php
-  
+  session_start();
   $servername = "den1.mysql4.gear.host";
   $username = "makeyourcakedb";
   $password = "hriday@123";
@@ -7,6 +7,14 @@
 
   $con = mysqli_connect($servername, $username, $password,$dbname);
 
+  if(isset($_SESSION)){
+    $sessionusrname = $_SESSION['username'];
+    echo "<script>$('#login').attr('href','logout.php');";
+    echo "$('#login').text('Logout');</script>";
+  
+  }
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -161,7 +169,7 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation" id="login"><a class="nav-link" href="Login.php">Login</a></li>
                     </ul>
                 </div>
         </div>
