@@ -1,11 +1,10 @@
 <?php
+
 session_start();
-    if(!isset($_SESSION)){
-        echo "<script>window.location.assign('Login.php');</script>";
+    if(!isset($_SESSION['username'])){
+        //echo "<script>window.location.assign('Login.php');</script>";
     }else{
         $sessionusrname = $_SESSION['username'];
-        echo "<script>$('#login').attr('href','logout.php');";
-        echo "$('#login').text('Logout');</script>";
     }
 
 ?>
@@ -48,7 +47,14 @@ session_start();
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation"><?php 
+
+                                            if(!isset($_SESSION['username'])){    
+                                                echo "<a class='nav-link' href='Login.php'>Login</a>";
+                                            }else{
+                                                echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                                            }
+                                            ?></li>
                     </ul>
                 </div>
         </div>

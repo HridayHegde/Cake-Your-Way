@@ -31,7 +31,14 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation"><?php 
+
+                                                        if(!isset($_SESSION['username'])){    
+                                                            echo "<a class='nav-link' href='Login.php'>Login</a>";
+                                                        }else{
+                                                            echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                                                        }
+                                                        ?></li>
                     </ul>
                 </div>
         </div>

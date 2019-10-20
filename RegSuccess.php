@@ -23,7 +23,7 @@
 
 <script>
    function redirect(){
-    window.location.assign('index.php');
+    window.location.assign('Login.php');
    }
 </script>
 </head>
@@ -39,7 +39,14 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: bold;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation"><?php 
+
+                                                if(!isset($_SESSION['username'])){    
+                                                    echo "<a class='nav-link' href='Login.php'>Login</a>";
+                                                }else{
+                                                    echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                                                }
+                                                ?></li>
                     </ul>
                 </div>
         </div>
@@ -47,7 +54,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <h5 class="text-center d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-md-center justify-content-lg-center justify-content-xl-center head-text" style="margin-top: 10%;" align="center">Registered Successfully</h5>
     </div>
-    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button onClick="redirect()" class="btn btn-primary text-center center-block button-style-h" type="button" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;">Home</button></div>
+    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button onClick="redirect()" class="btn btn-primary text-center center-block button-style-h" type="button" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;">Login</button></div>
     
     <div id="footerofpage">
         <?php include('footer.html');?>

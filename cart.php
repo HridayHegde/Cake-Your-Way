@@ -1,12 +1,11 @@
 <?php
 session_start();
  
- if(!isset($_SESSION)){
+ if(!isset($_SESSION['username'])){
   echo "<script>window.location.assign('Login.php');</script>";
 }else{
   $sessionusrname = $_SESSION['username'];
-  echo "<script>$('#login').attr('href','logout.php');";
-  echo "$('#login').text('Logout');</script>";
+  echo "<script>alert('$sessionusrname');</script>";
 }
   $servername = "den1.mysql4.gear.host";
   $username = "makeyourcakedb";
@@ -113,7 +112,14 @@ session_start();
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation"><?php 
+
+                                if(!isset($_SESSION['username'])){    
+                                    echo "<a class='nav-link' href='Login.php'>Login</a>";
+                                }else{
+                                    echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                                }
+                                ?></li>
                     </ul>
                 </div>
         </div>
@@ -127,7 +133,7 @@ session_start();
   if(!isset($_GET[$tablename])){
   
     global $con;
-    $get_pro = "select * from $tablename";
+    $get_pro = "select * from $tablename where username='$sessionusrname'";
     $run_pro = mysqli_query($con, $get_pro);
     if (!$run_pro) {
       printf("Error: %s\n", mysqli_error($con));

@@ -7,11 +7,13 @@
 
   $con = mysqli_connect($servername, $username, $password,$dbname);
 
-  if(isset($_SESSION)){
+  if(isset($_SESSION['username'])){
     $sessionusrname = $_SESSION['username'];
     echo "<script>$('#login').attr('href','logout.php');";
     echo "$('#login').text('Logout');</script>";
   
+  }else{
+    echo "<script>window.location.assign('Login.php');</script>";
   }
 
   
@@ -116,20 +118,24 @@
 <script>
   var cakeidhf;
   var cakeidfl;
+  var emid = "<?php echo $sessionusrname; ?>";
  function ordhalf(elm){
     cakeidhf = elm.parentNode.id;
+    
     jQuery.ajax({
     type: "POST",
     url: 'ordhalf.php',
     dataType: 'json',
-    data: {id: cakeidhf},
+    data: {id: cakeidhf,email1:emid},
 
     success: function (obj, textstatus) {
                   if( !('error' in obj) ) {
                       console.log("added to cart");
+                      alert("Added");
                   }
                   else {
                       console.log(obj.error);
+                      alert(obj.error);
                   }
             }
 });
@@ -141,7 +147,7 @@
     type: "POST",
     url: 'ordfull.php',
     dataType: 'json',
-    data: {id: cakeidfl},
+    data: {id: cakeidfl,email1:emid},
 
     success: function (obj, textstatus) {
                   if( !('error' in obj) ) {
@@ -169,7 +175,14 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation" id="login"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation" id="login"><?php 
+
+                                          if(!isset($_SESSION['username'])){    
+                                              echo "<a class='nav-link' href='Login.php'>Login</a>";
+                                          }else{
+                                              echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                                          }
+                                          ?></li>
                     </ul>
                 </div>
         </div>
@@ -244,10 +257,7 @@
     <div id="footerofpage">
             <?php include('footer.html');?>
     </div>
-           
-    
-    
-    <script src="assets/js/jquery.min.js"></script>
+     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
