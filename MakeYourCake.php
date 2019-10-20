@@ -291,7 +291,7 @@ session_start();
             </div>
         </div>
     </section>
-    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button onClick="redirect()" class="btn btn-primary text-center center-block button-style-h" type="button" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 3%;">Order</button></div>
+    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button class="btn btn-primary text-center center-block button-style-h" type="submit" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 3%;" name="custcakebut">Order</button></div>
                 </form>
     <div id="footerofpage">
           <?php include('footer.html');?>

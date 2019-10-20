@@ -11,7 +11,8 @@
     $cakeshape = $_POST['shapeofcake'];
     $caketier = $_POST['tierofcake'];
 
-    $message = '';
-    mail ($to,$subject,);
-
+    $message = "Customer $customerid has placed and order for a custom cake\nThe Base of the Cake is : $cakebase\nToppings for the Cake are: $caketopping\n 
+    Cream for the Cake : $cakecream\nSize of The Cake is : $cakesize\nTier of the cake is : $caketier.";
+    mail ($to,$subject,$message);
+    
 ?>
