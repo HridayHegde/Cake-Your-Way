@@ -130,7 +130,7 @@ session_start();
     <!--<div class="d-xl-flex align-content-center justify-content-xl-center align-items-xl-center">-->
         <center><h5 class="text-center  justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: 100%;padding-top: 36px;">Customize Your Cake</h5></center>
     <!--</div>-->
-   <form method="POST" action="custord.php">
+   <form method="POST" action="pay.php">
     <section style="margin-top:4%;">
     <div class="row" style="width:100%;margin-top:5%;">
             <div class="column"><center><h4>Select a Base type for your Cake : </h4></center></div>
@@ -293,19 +293,18 @@ session_start();
             </div>
         </div>
     </section>
+    <input type="hidden" value =<?php echo $totalcost;?> name="cost">
     <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><button class="btn btn-primary text-center center-block button-style-h" type="submit" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 3%;" name="custcakebut">Order</button></div>
-                </form>
+               
+    
+    <!-- <button type='sumbit'  class='btn btn-outline-dark' >      Proceed To Checkout  <img src='assets/img/right_arrow.png' style='margin-left: 4%;' alt=''></button></center>
+                 -->
+    </form>
 
 
                 <div><center>
             <form method="POST" action='pay.php'>
-                <input type="hidden" value =<?php echo $totalcost;?> name="cost">
-                <button type='sumbit'  class='btn btn-outline-dark' >      Proceed To Checkout  <img src='assets/img/right_arrow.png' style='margin-left: 4%;' alt=''></button></center>
-                </form>
-                </center>
-           </div><br><br>
-
-        </div>     
+                
     <div id="footerofpage">
           <?php include('footer.html');?>
     </div>
