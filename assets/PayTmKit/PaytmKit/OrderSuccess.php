@@ -11,7 +11,7 @@ session_start();
     $q1="delete from cart where username='$ee'";
     $r = mysqli_query($con,$q1);
     if($r){
-        echo "<script> window.location.assign('Menu.php')</script>";
+        echo "<script> window.location.assign('www.cakeyourway.gearhostpreview.com/Menu.php')</script>";
     }
  }
  
