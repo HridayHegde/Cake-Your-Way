@@ -35,7 +35,7 @@ $paramList["IS_USER_VERIFIED"] = "YES"; //
 */
 
 //Here checksum string will return by getChecksumFromArray() function.
-$checkSum = "ghjknhuikhyuikjhuikjhuikgyuinbgyujftyuikftyuikgftyujgftyujfrtyuijhgtyuhgfrt67uuht67uhtuht67jhgtujhgrtsgdtsfa";//getChecksumFromArray($paramList,PAYTM_MERCHANT_KEY);
+$checkSum =getChecksumFromArray($paramList,PAYTM_MERCHANT_KEY);
 
 ?>
 <html>
