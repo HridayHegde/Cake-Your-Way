@@ -17,6 +17,6 @@ if(isset($_SESSION['username'])){
   $a = mysqli_error ($con);
   echo "<script>alert($a);</script>";
 
-  echo "<script>alert('added full')</script>"
+  echo "<script>alert('added full')</script>";
   }
 ?>
