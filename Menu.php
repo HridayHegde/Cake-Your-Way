@@ -46,6 +46,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/notify.min.js"></script>
     
     
     <!--php-->
@@ -131,7 +132,8 @@
     success: function (obj, textstatus) {
                   if( !('error' in obj) ) {
                       console.log("added to cart");
-                      alert("Added");
+                      //alert("Added");
+                      $.notify("Added",{position:"right-middle"});
                   }
                   else {
                       console.log(obj.error);
@@ -152,6 +154,7 @@
     success: function (obj, textstatus) {
                   if( !('error' in obj) ) {
                       console.log("added to cart");
+                      $.notify("Added",{position:"right-middle"});
                   }
                   else {
                       console.log(obj.error);
@@ -160,6 +163,9 @@
 });
  }
 
+function cart(){
+  window.location.assign('cart.php');
+}
 </script>
 
 </head>
@@ -170,8 +176,8 @@
             <a
                 class="navbar-brand d-sm-flex mr-auto" href="index.php"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: bold;">Home</a></li>
+                    <ul class="nav navbar-nav  navbar-right">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
@@ -188,13 +194,13 @@
         </div>
     </nav>
     <div>
-        <h1 class="text-center float-none d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: auto;padding-top: 0.5%;">Menu</h1> 
-    </div>
+        <h1 class="text-center float-none d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: auto;padding-top: 0.5%;">Menu</h1>
+      </div>
     
     
 <!------ Include the above in your HEAD tag ---------->
 <section class="menusec" style="padding-top: 5%;margin-top: 58px;width: 100%;"></section>
-<div class='row'>
+<div class='row' style="width:100%;">
   <?php
   $tablename = 'assorted_cakes';
   if(!isset($_GET[$tablename])){
@@ -253,7 +259,8 @@
 
         
       
-    </section>
+    </section><br><br><br>
+    <center><button OnClick='cart()'>Cart<button></center><br><br><br>
     <div id="footerofpage">
             <?php include('footer.html');?>
     </div>
