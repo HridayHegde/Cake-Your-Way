@@ -41,7 +41,7 @@ if($isValidChecksum == "TRUE") {
 }
 else {
 	echo "<b>Transaction status is success</b>" . "<br/>";
-	echo "<script>window.location.assign('OrderSuccess.php')</script>";
+	echo "<script>window.location.assign('www.cakeyourway.gearhostpreview.com/OrderSuccess.php')</script>";
 	//Process transaction as suspicious.
 }
 

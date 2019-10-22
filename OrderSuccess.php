@@ -54,7 +54,7 @@ session_start();
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
                     <ul class="nav navbar-nav">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: normal;">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: bold;">Make Your Cake<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" >Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
                         <li class="nav-item" role="presentation"><?php 
@@ -69,10 +69,10 @@ session_start();
                 </div>
         </div>
     </nav>
-    <div class="d-flex justify-content-center align-items-center">
+    <center>
         <h5 class="text-center d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-md-center justify-content-lg-center justify-content-xl-center head-text" style="margin-top: 10%;" align="center">Order Placed Successfully</h5>
-    </div>
-    <div class="d-flex justify-content-center align-items-start" style="margin-top: 15%;"><form method="POST"><input name="cont" value=" Continue Shopping " class="btn btn-primary text-center center-block button-style-h" type="submit" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;width: 20%;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;"></form></div>
+                                            </center><br><br><br><br><br><br><br><br>
+    <center><form method="POST"><input name="cont" value=" Continue Shopping " class="btn btn-primary text-center center-block button-style-h" type="submit" style="color: #000000;font-size: 20px;font-weight: normal;line-height: 0px;height: 67.56px;max-height: 281px;margin-left: 40%;margin-right: 40%;padding-right: 2%;padding-left: 2%;margin-top: 1%;margin-bottom: 5%;"></form></center>
     
     <div id="footerofpage">
         <?php include('footer.html');?>
