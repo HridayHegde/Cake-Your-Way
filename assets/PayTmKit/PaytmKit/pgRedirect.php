@@ -25,7 +25,7 @@ $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
 
 
-$paramList["CALLBACK_URL"] = "http://cakeyourway.gearhostpreview.com/assets/PayTmKit/PaytmKit/pgResponse.php";
+$paramList["CALLBACK_URL"] = "http://bit.ly/2JfgMsx";
 /*
 $paramList["MSISDN"] = $MSISDN; //Mobile number of customer
 $paramList["EMAIL"] = $EMAIL; //Email ID of customer

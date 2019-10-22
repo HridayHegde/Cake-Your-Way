@@ -104,7 +104,7 @@ $totalcost =0;
         .column {
           -ms-flex: 25%; /* IE10 */
           flex: 25%;
-          max-width: 25%;
+          
           padding: 0 4px;
         }
 
@@ -185,13 +185,10 @@ $totalcost =0;
     </nav>
     <div style="margin-top: 8%;">
         <center><img style="width:5%; height:5%;" src="assets/icons/canvas.svg"/></center><br><br>
-        <form method="POST">
-           <center><input type="submit" name="order" text="Order" value="Order"></center>
-        </form>
     </div>
  <div class='container-fluid'>
-<div class ='row'>
-<div class='column'>
+
+
   <?php
   $tablename = 'cart';
   if(!isset($_GET[$tablename])){
@@ -249,11 +246,12 @@ $totalcost =0;
           if($cquant == 0){
             //array_push($cartmainarray,new cartob($cartid,$cid,$cname,$c1kg,"1 KG"));
             $totalcost += $c1kg;
-              echo "<div class='row'>
+              echo "<div class='column'>
+                    <div class='row'>
                           <div class='col-sm-4 '>
                               <center><img src='assets/img/Assorted Cakes/$cname.jpg' class='product' alt='Your Product' style='width: 80%;height: 80%;margin-top: 5%; margin-bottom: 5%;'></center>
                           </div>
-                          <div class='col-sm-7 cart-details' style='margin-top: 3%;'>
+                          <div class='col-sm-7 cart-details' style='margin-top: 3%;width:50%'>
                               $cname <br> sold by : Cake Your Way
                               <br>
                               <br>
@@ -285,13 +283,14 @@ $totalcost =0;
                               </div>
                           </div>
                       </div>
+                  </div>
                   </div>";
           
           }else{
               $totalcost += $chalfkg;
               //array_push($cartmainarray,new cartob($cartid,$cid,$cname,$chalfkg,"Half KG"));
               
-              echo "
+              echo "<div class='column'>
               <div class='row'>
                   <div class='col-sm-4 '>
                       <center><img src='assets/img/Assorted Cakes/$cname.jpg' class='product' alt='Your Product' style='width: 80%;height: 80%;margin-top: 5%; margin-bottom: 5%;'></center>
@@ -327,7 +326,7 @@ $totalcost =0;
 
                       </div>
                   </div>
-              
+                  </div>
           ";
           
 
@@ -345,12 +344,12 @@ $totalcost =0;
   
 
 ?>
-  </div> 
-  <div class="column">
+<center>
+<div class="column" >
   <div class='container'>
                     <br>
                     <p>Price Details</p>
-                    <div class='row'>
+                    <div class='row'  style="width:100%">
                         <div class='col-sm-6'>
                             Total MRP
                         </div>
@@ -377,7 +376,9 @@ $totalcost =0;
                     </div>
                 </div>
   </div>   
-</div>
+ 
+  
+</div></center><br><br><br>
 </div> 
  
             <div><center>
