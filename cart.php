@@ -1,5 +1,12 @@
 <?php
+session_start();
  
+ if(!isset($_SESSION['username'])){
+  echo "<script>window.location.assign('Login.php');</script>";
+}else{
+  $sessionusrname = $_SESSION['username'];
+  //echo "<script>alert('$sessionusrname');</script>";
+}
   $servername = "den1.mysql4.gear.host";
   $username = "makeyourcakedb";
   $password = "hriday@123";
@@ -7,6 +14,46 @@
 
   $con = mysqli_connect($servername, $username, $password,$dbname);
 
+  $cartmainarray = array();
+
+  class cartob{
+    public function __construct($cid,$cakeid,$cakename,$cakeprice,$cakesize){
+      $this->cartid = $cid;
+      
+      $this->$cakeid = $cakeid;
+      $this->$cakename = $cakename;
+      $this->$cakeprice = $cakeprice;
+      $this->$cakesize = $cakesize;
+      
+    }
+
+    
+  }
+
+  if(isset($_POST['order'])){
+    $serialized_cart = serialize($cartmainarray);
+    $sql = "INSERT INTO orders_assorted (custemail, cartdata) VALUES ('$sessionusrname','$serialized_cart')";
+        if(mysqli_query($con, $sql)){
+            echo "Order added successfully.";
+            //Payment Window Connection
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
+  }
+
+  if(isset($_POST['rmv'])){
+    $con; 
+    $ee = $_SESSION['username'];
+    $iid = $_POST['rmv'];
+    $q1="delete from cart where cartid=$iid && username='$ee'";
+    $r = mysqli_query($con,$q1);
+    if($r){
+        echo "<script> window.location.assign('cart.php')</script>";
+    }
+
+  }
+  
+$totalcost =0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,7 +104,7 @@
         .column {
           -ms-flex: 25%; /* IE10 */
           flex: 25%;
-          max-width: 25%;
+          
           padding: 0 4px;
         }
 
@@ -91,6 +138,25 @@
           text-align: center;
           background-color: #f1f1f1;
         }
+
+        .bill {
+            margin-left: 4%;
+            border: 0.4px solid #000000;
+            border-radius: 20px;
+        }
+
+        .details {
+            border: 0.4px solid #000000;
+            border-radius: 20px;
+        }
+
+        .product {
+            border-radius: 20px;
+        }
+
+        .cart-details {
+            margin-left: 3%;
+        }
     </style>
 </head>
 
@@ -105,26 +171,35 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php">Make Your Cake<br></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Login</a></li>
+                        <li class="nav-item" role="presentation"><?php 
+
+                                if(!isset($_SESSION['username'])){    
+                                    echo "<a class='nav-link' href='Login.php'>Login</a>";
+                                }else{
+                                    echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                                }
+                                ?></li>
                     </ul>
                 </div>
         </div>
     </nav>
     <div style="margin-top: 8%;">
-        <center><img style="width:5%; height:5%;" src="assets/icons/canvas.svg"/></center>
+        <center><img style="width:5%; height:5%;" src="assets/icons/canvas.svg"/></center><br><br>
     </div>
-    
+ <div class='container-fluid'>
+
+
   <?php
   $tablename = 'cart';
   if(!isset($_GET[$tablename])){
   
     global $con;
-    $get_pro = "select * from $tablename";
+    $get_pro = "select * from $tablename where username='$sessionusrname'";
     $run_pro = mysqli_query($con, $get_pro);
     if (!$run_pro) {
       printf("Error: %s\n", mysqli_error($con));
       exit();
-  }
+    }
     $rowcount =0;
     //$result = mysqli_query($con,"SELECT * FROM user_list where username = '" . mysqli_real_escape_string($con, $username) . "'"); 
     
@@ -135,6 +210,8 @@
         $cidcart = $row_pro['cid'];
        
         $cquant = $row_pro['quant'];
+
+        $cartid = $row_pro['cartid'];
 
         $get_cakes = "select * from assorted_cakes where cid =$cidcart";
        
@@ -154,6 +231,7 @@
         $row_do=mysqli_fetch_array($run_cakes);
        
 
+            
             $cid = $row_do['cid'];
             $cname = $row_do['cname'];
             $chalfkg = $row_do['chalfkg'];
@@ -166,68 +244,90 @@
         $cquant = $row_pro['quant'];
         if($cname != ""){
           if($cquant == 0){
-              echo " <div class = 'row' style='width:100%;'>
-                      
-                          <div class='column'>
-                         
-                              <img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/>
-                          
-                          
+            //array_push($cartmainarray,new cartob($cartid,$cid,$cname,$c1kg,"1 KG"));
+            $totalcost += $c1kg;
+              echo "<div class='column'>
+                    <div class='row'>
+                          <div class='col-sm-4 '>
+                              <center><img src='assets/img/Assorted Cakes/$cname.jpg' class='product' alt='Your Product' style='width: 80%;height: 80%;margin-top: 5%; margin-bottom: 5%;'></center>
                           </div>
-                          <hr>
-                          <div class='column'>
-                          
-                          <p><h3>$cname</h3><br>
-                              <p>$desc</p>
-                          </p>
-                          
-                          
+                          <div class='col-sm-7 cart-details' style='margin-top: 3%;width:50%'>
+                              $cname <br> sold by : Cake Your Way
+                              <br>
+                              <br>
+                              <div class='row'>
+                                  <div class='col-sm-4'>
+                                      Size : 1 Kg
+                                  </div>
+        
+                              </div>
+                              <div class='row '>
+                                  <div class='col-sm-3 '>
+                                      ₹ $c1kg
+                                  </div>
+                                  
+        
+                              </div>
+                              <br>
+                              <div class='row '>
+                                  <div class='col-sm-3'>
+                                      <form method='post'>
+                                      <button type='submit' class='btn btn-outline-dark' name='rmv' value = $cidcart >Remove</button>
+                                      </form>
+                                      </div>
+                                  <div class='col-sm-1'>
+        
+                                  </div>
+          
+        
+                              </div>
                           </div>
-                          <hr>
-                          <div class='column'>
-                          
-                          <center><h4>Quantity</h4><br>
-                              <h3>1 KG</h3>
-                          
-                          </center>
-                          
-                          
-                          </div>
-                          </div>
-                      ";
-              
+                      </div>
+                  </div>
+                  </div>";
           
           }else{
+              $totalcost += $chalfkg;
+              //array_push($cartmainarray,new cartob($cartid,$cid,$cname,$chalfkg,"Half KG"));
               
-      
-              echo " <div class = 'row' style='width:100%;'>
-              
-                  <div class='column'>
-                  <div class='card'>
-                      <img src='assets/img/Assorted Cakes/$cname.jpg' width='100%' height='300px'/>
-                  
+              echo "<div class='column'>
+              <div class='row'>
+                  <div class='col-sm-4 '>
+                      <center><img src='assets/img/Assorted Cakes/$cname.jpg' class='product' alt='Your Product' style='width: 80%;height: 80%;margin-top: 5%; margin-bottom: 5%;'></center>
                   </div>
-                  </div>
-                  <div class='column'>
-                  <div class='card'>
-                  <p><h3>$cname</h3><br>
-                      <p>$desc</p>
-                  </p>
-                  
-                  </div>
-                  </div>
-                  <div class='column'>
-                  <div class='card'>
-                  <center><h4>Quantity</h4><br>
-                      <h3>Half KG</h3>
-                  
-                  </center>
-                  
-                  </div>
-                  </div>
-                  </div>
-              ";
+                  <div class='col-sm-7 cart-details' style='margin-top: 3%;'>
+                      $cname <br> sold by : Cake Your Way
+                      <br>
+                      <br>
+                      <div class='row'>
+                          <div class='col-sm-4'>
+                              Size : 1/2 Kg
+                          </div>
 
+                      </div>
+                      <div class='row '>
+                          <div class='col-sm-3 '>
+                              ₹ $chalfkg
+                          </div>
+                          
+
+                      </div>
+                      <br>
+                      <div class='row '>
+                          <div class='col-sm-3'>
+                              <form method='POST'>
+                              <button type='submit' class='btn btn-outline-dark' name='rmv' value = $cidcart >Remove</button>
+                              </form>
+                              </div>
+                          <div class='col-sm-1'>
+
+                          </div>
+  
+
+                      </div>
+                  </div>
+                  </div>
+          ";
           
 
         
@@ -236,12 +336,60 @@
       
       }
     }
-       
-} 
-    ?>
-      
+    
+    
 
-        
+  } 
+
+  
+
+?>
+<center>
+<div class="column" >
+  <div class='container'>
+                    <br>
+                    <p>Price Details</p>
+                    <div class='row'  style="width:100%">
+                        <div class='col-sm-6'>
+                            Total MRP
+                        </div>
+                        <div class='col-sm-6'>
+                            ₹ <?php echo $totalcost;?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-sm-6'>
+                            Delivery Charges
+                        </div>
+                        <div class='col-sm-6'>
+                            ₹ 100
+                        </div>
+                    </div>
+                    <hr>
+                    <div class='row'>
+                        <div class='col-sm-6'>
+                            <b>TOTAL</b>
+                        </div>
+                        <div class='col-sm-6'>
+                            ₹ <?php $totalcost = $totalcost+100;echo $totalcost;?>
+                        </div>
+                    </div>
+                </div>
+  </div>   
+ 
+  
+</div></center><br><br><br>
+</div> 
+ 
+            <div><center>
+            <form method="POST" action='pay.php'>
+                <input type="hidden" value =<?php echo $totalcost;?> name="cost">
+                <button type='sumbit'  class='btn btn-outline-dark' >      Proceed To Checkout  <img src='assets/img/right_arrow.png' style='margin-left: 4%;' alt=''></button></center>
+                </form>
+                </center>
+           </div><br><br>
+
+        </div>     
       
     </section>
     <div id="footerofpage">
