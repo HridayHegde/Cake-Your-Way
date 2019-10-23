@@ -303,7 +303,7 @@ session_start();
 
 
                 <div><center>
-            <form method="POST" action='pay.php'>
+            
                 
     <div id="footerofpage">
           <?php include('footer.html');?>
