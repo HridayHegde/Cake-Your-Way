@@ -50,7 +50,7 @@
             <div class="illustration"><i class="fas fa-birthday-cake" style="color: rgb(185,129,211);"></i></div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(to right, rgba(235, 148, 250, 0.76) 0%, rgba(143, 134, 250, 0.55) 100%);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(to right, rgba(235, 148, 250, 0.76) 0%, rgba(143, 134, 250, 0.55) 100%);">Log In</button></div><a class="forgot" href="contactadmin.php">Forgot your email or password?</a>
             <a
                 class="forgot" href="Registration.php">Sign Up</a>
         </form>

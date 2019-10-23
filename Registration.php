@@ -26,10 +26,10 @@
         <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="padding-right: 12px;margin-right: 5px;"><span class="sr-only" style="padding-right: 0px;">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <a class="navbar-brand d-sm-flex mr-auto" href="index.php"><strong>Cake : Your Way</strong></a>
                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
-                    <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="font-weight: bold;">Home</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php" style="">Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="MakeYourCake.php" style="font-weight: normal;">Make Your Cake<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php"><strong>Menu</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Menu.php">Menu</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="AboutUs.php">About Us</a></li>
                         <li class="nav-item" role="presentation"><?php 
 

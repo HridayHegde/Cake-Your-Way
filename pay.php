@@ -13,7 +13,22 @@ $servername = "den1.mysql4.gear.host";
         $total_price = $_POST['cost'];
     }
                         
+	if(isset($_POST['custcakebut'])){
+		$cakebase = $_POST['baseofcake'];
+		$caketopping = $_POST['toppingscake'];
+		$cakecream = $_POST['creamofcake'];
+		$cakesize = $_POST['sizeofcake'];
+		$cakeshape = $_POST['shapeofcake'];
+		$caketier = $_POST['tierofcake'];
 
+		$sql = "INSERT INTO orders_myc (email, base, topping, cream, size, shape, tier) VALUES ('$emailid', '$cakebase','$caketopping','$cakecream','$cakesize','$cakeshape','$caketier')";
+		if(mysqli_query($con, $sql)){
+		
+		} else{
+			
+			echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+		}
+	}
 
 ?>
 

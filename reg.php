@@ -18,17 +18,21 @@ $name= mysqli_real_escape_string($link,$_REQUEST['name']);
 $password = mysqli_real_escape_string($link,  hash('sha256', $_REQUEST['password']));
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
  
- 
+if(mysqli_real_escape_string($link,$_REQUEST['password']) == mysqli_real_escape_string($link,$_REQUEST['reppassword'])) {
 // Attempt insert query execution
-$sql = "INSERT INTO users (username, email, password) VALUES ('$name', '$email', '$password')";
-if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-    echo "added : ","email : $email ","Name : $name ","password : $password";
-    echo "<script> window.location.assign('RegSuccess.php')</script>";	
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    $sql = "INSERT INTO users (username, email, password) VALUES ('$name', '$email', '$password')";
+    if(mysqli_query($link, $sql)){
+        echo "Records added successfully.";
+        echo "added : ","email : $email ","Name : $name ","password : $password";
+        echo "<script> window.location.assign('RegSuccess.php')</script>";	
+    } else{
+        
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+}else{
+    echo "<script> alert('Passwords do no match');</script>";
+    echo "<script> window.location.assign('Registration.php')</script>";
 }
- 
 // Close connection
 mysqli_close($link);
 ?>

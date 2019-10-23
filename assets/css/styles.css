@@ -3,7 +3,7 @@
 }
 
 .head-text {
-  position: relative;
+ /* position: relative;*/
   /*height: 45px;*/
   /*left: 557px;*/
   top: 50px;
@@ -12,13 +12,15 @@
   font-weight: bold;
   font-size: 36px;
   line-height: 45px;
-  /* identical to box height */display: flex;
+  /* identical to box height */
+/*display: flex;*/
   /*align-items: center;*/
   text-align: center;
   letter-spacing: 0.05em;
   background: linear-gradient(to right, #AC3B61 0%, rgba(83, 89, 254, 0.82) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-top: 10%;
 }
 
 .body-text {
@@ -27,7 +29,8 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 30px;
-  /* or 167% */display: flex;
+  /* or 167% */
+display: flex;
   align-items: center;
   color: #000000;
 }

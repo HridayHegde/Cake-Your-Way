@@ -101,32 +101,34 @@ session_start();
         </div>
     </div>
     <section>
+        <a href="Menu.php">
         <div class="container flex-shrink-1">
             <div class="row flex-shrink-1 flex-fill">
-                <div class="col flex-shrink-1" style="width: 50%;height: 100%;padding-top: 5px;"><img class="flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1" src="assets/img/Rectangle%205.2.png" style="width: 100%;height: 100%;">
-                    <h4 style="margin-top: 5px;">Strawberry Cake</h4>
+                <div class="col flex-shrink-1" style="width: 50%;height: 100%;padding-top: 5px;"><img class="flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1" src="assets/img/Assorted Cakes/Mango cake.jpg" style="width: 100%;height: 100%;">
+                    <h4 style="margin-top: 5px;">Mango Cake</h4>
                 </div>
-                <div class="col flex-shrink-1" style="width: 100%;height: 100%;"><img class="flex-shrink-1" src="assets/img/Rectangle%205.2(1).png" style="width: 100%;height: 100%;padding-top: 5px;">
-                    <h4 style="margin-top: 5px;">Chocolate Cake</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col" style="width: 100%;height: 100%;"><img class="flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1" src="assets/img/Rectangle%205.2.png" style="width: 100%;height: 100%;padding-top: 5px;">
-                    <h4 style="margin-top: 5px;">Strawberry Cake</h4>
-                </div>
-                <div class="col" style="width: 100%;height: 100%;padding-top: 5px;"><img src="assets/img/Rectangle%205.2(1).png" style="width: 100%;height: 100%;">
-                    <h4 style="margin-top: 5px;">Chocolate Cake</h4>
+                <div class="col flex-shrink-1" style="width: 100%;height: 100%;"><img class="flex-shrink-1" src="assets\img\Assorted Cakes\Oreo cake.jpg" style="width: 100%;height: 100%;padding-top: 5px;">
+                    <h4 style="margin-top: 5px;">Oreo Cake</h4>
                 </div>
             </div>
             <div class="row">
-                <div class="col" style="width: 100%;height: 100%;padding: 5px;"><img class="flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1" src="assets/img/Rectangle%205.2.png" style="width: 100%;">
-                    <h4 style="margin-top: 5px;">Strawberry Cake</h4>
+                <div class="col" style="width: 100%;height: 100%;"><img class="flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1" src="assets/img/Assorted Cakes/Chocochip cake.jpg" style="width: 100%;height: 100%;padding-top: 5px;">
+                    <h4 style="margin-top: 5px;">Chocochip Cake</h4>
                 </div>
-                <div class="col" style="width: 100%;height: 100%;padding-top: 5px;"><img src="assets/img/Rectangle%205.2(1).png" style="width: 100%;height: 100%;">
-                    <h4 style="margin-top: 5px;">Chocolate Cake</h4>
+                <div class="col" style="width: 100%;height: 100%;padding-top: 5px;"><img src="assets\img\Assorted Cakes\Red velvet cake.jpg" style="width: 100%;height: 100%;">
+                    <h4 style="margin-top: 5px;">Red Velvet Cake</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="width: 100%;height: 100%;padding: 5px;"><img class="flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1" src="assets/img/Assorted Cakes/Pineapple cake.jpg" style="width: 100%;">
+                    <h4 style="margin-top: 5px;">Pineapple cake</h4>
+                </div>
+                <div class="col" style="width: 100%;height: 100%;padding-top: 5px;"><img src="assets/img/Assorted Cakes/Strawberry cake.jpg" style="width: 100%;height: 100%;">
+                    <h4 style="margin-top: 5px;">Strawberry Cake</h4>
                 </div>
             </div>
         </div>
+                                        </a>
     </section>
     <div id="footerofpage">
             <?php include('footer.html');?>
