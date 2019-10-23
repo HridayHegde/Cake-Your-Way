@@ -29,6 +29,18 @@ $servername = "den1.mysql4.gear.host";
 			echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
 		}
 	}
+	if(isset($_POST['ordercart'])){
+		$cartarr = $_POST['cartarr'];
+		
+
+		$sql = "INSERT INTO orders_assorted (custemail, cartdata) VALUES ('$emailid','$cartarr')";
+		if(mysqli_query($con, $sql)){
+		
+		} else{
+			
+			echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+		}
+	}
 
 ?>
 

@@ -244,7 +244,7 @@ $totalcost =0;
         $cquant = $row_pro['quant'];
         if($cname != ""){
           if($cquant == 0){
-            //array_push($cartmainarray,new cartob($cartid,$cid,$cname,$c1kg,"1 KG"));
+            array_push($cartmainarray,$cid);
             $totalcost += $c1kg;
               echo "<div class='column'>
                     <div class='row'>
@@ -288,7 +288,8 @@ $totalcost =0;
           
           }else{
               $totalcost += $chalfkg;
-              //array_push($cartmainarray,new cartob($cartid,$cid,$cname,$chalfkg,"Half KG"));
+
+              array_push($cartmainarray,$cid);
               
               echo "<div class='column'>
               <div class='row'>
@@ -384,7 +385,8 @@ $totalcost =0;
             <div><center>
             <form method="POST" action='pay.php'>
                 <input type="hidden" value =<?php echo $totalcost;?> name="cost">
-                <button type='sumbit'  class='btn btn-outline-dark' >      Proceed To Checkout  <img src='assets/img/right_arrow.png' style='margin-left: 4%;' alt=''></button></center>
+                <input type="hidden" value =<?php echo $cartmainarray;?> name="cartarr">
+                <button type='sumbit' name="ordercart" class='btn btn-outline-dark' >      Proceed To Checkout  <img src='assets/img/right_arrow.png' style='margin-left: 4%;' alt=''></button></center>
                 </form>
                 </center>
            </div><br><br>
