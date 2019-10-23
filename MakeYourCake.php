@@ -128,7 +128,7 @@ session_start();
         </div>
     </nav>
     <!--<div class="d-xl-flex align-content-center justify-content-xl-center align-items-xl-center">-->
-        <center><h5 class="text-center  justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: 100%;padding-top: 36px;">Customize Your Cake</h5></center>
+        <center><h5 class="head-text" style="">Customize Your Cake</h5></center>
     <!--</div>-->
    <form method="POST" action="pay.php">
     <section style="margin-top:4%;">

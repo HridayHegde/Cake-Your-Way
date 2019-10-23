@@ -194,7 +194,7 @@ function cart(){
         </div>
     </nav>
     <div>
-        <h1 class="text-center float-none d-xl-flex flex-shrink-1 justify-content-center align-items-center align-content-center m-auto justify-content-xl-center head-text" style="width: auto;padding-top: 0.5%;">Menu</h1>
+        <center><h1 class="head-text" style=";">Menu</h1></center>
       </div>
     
     
@@ -261,7 +261,7 @@ function cart(){
       
     </section><br><br><br>
     <center><button OnClick='cart()'>Cart<button></center><br><br><br>
-    <div id="footerofpage">
+    <div id="footerofpage" style="width:100%">
             <?php include('footer.html');?>
     </div>
      <script src="assets/js/jquery.min.js"></script>
