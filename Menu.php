@@ -260,7 +260,7 @@ function cart(){
         
       
     </section><br><br><br>
-    <center><button OnClick='cart()'>Cart<button></center><br><br><br>
+    <center><button class="btn-primary" style="width:110px;height:50px;" OnClick='cart()'>Cart</button></center><br><br><br>
     <div id="footerofpage" style="width:100%">
             <?php include('footer.html');?>
     </div>
