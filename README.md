@@ -5,7 +5,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![Last Commit][last-activity-shield]][last-activity-url] 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -165,5 +165,5 @@ Project Link: [https://github.com/HridayHegde/Cake-Your-Way](https://github.com/
 [license-shield]: https://img.shields.io/github/license/HridayHegde/Cake-Your-Way.svg?style=flat-square
 [license-url]: https://github.com/HridayHegde/Cake-Your-Way/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: www.linkedin.com/in/hridayhegde
+[linkedin-url]: https://www.linkedin.com/in/reubence/
 [product-screenshot]: ReadmeAssets/project_ss.jpg
