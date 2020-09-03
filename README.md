@@ -27,7 +27,7 @@
     <br />
     <a href="https://github.com/HridayHegde/Cake-Your-Way">View Website</a>
     ·
-    <a href="https://github.com/HridayHegde/Cake-Your-Way/issues">Report Bug</a>
+    <a href="https://github.com/HridayHegde/Cake-Your-Way/issues">Cake-Your-Wayrt Bug</a>
     ·
     <a href="https://github.com/HridayHegde/Cake-Your-Way/issues">Request Feature</a>
   </p>
@@ -61,7 +61,7 @@
 
 Custom Made Cakes, doesn't that sound too good to be true xD. Well though we dont make those cakes we did build the website:D. Who knows in the future maybe we'll make those good and yummy cakes too.
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`HridayHegde`, `repo_name`, `twitter_handle`, `email`
+`HridayHegde`, `Cake-Your-Way_name`, `twitter_handle`, `email`
 
 
 ### Built With
@@ -154,16 +154,16 @@ Project Link: [https://github.com/HridayHegde/Cake-Your-Way](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/HridayHegde/repo.svg?style=flat-square
-[contributors-url]: https://github.com/HridayHegde/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/HridayHegde/repo.svg?style=flat-square
-[forks-url]: https://github.com/HridayHegde/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/HridayHegde/repo.svg?style=flat-square
-[stars-url]: https://github.com/HridayHegde/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/HridayHegde/repo.svg?style=flat-square
-[issues-url]: https://github.com/HridayHegde/repo/issues
-[license-shield]: https://img.shields.io/github/license/HridayHegde/repo.svg?style=flat-square
-[license-url]: https://github.com/HridayHegde/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/HridayHegde/Cake-Your-Way.svg?style=flat-square
+[contributors-url]: https://github.com/HridayHegde/Cake-Your-Way/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/HridayHegde/Cake-Your-Way.svg?style=flat-square
+[forks-url]: https://github.com/HridayHegde/Cake-Your-Way/network/members
+[stars-shield]: https://img.shields.io/github/stars/HridayHegde/Cake-Your-Way.svg?style=flat-square
+[stars-url]: https://github.com/HridayHegde/Cake-Your-Way/stargazers
+[issues-shield]: https://img.shields.io/github/issues/HridayHegde/Cake-Your-Way.svg?style=flat-square
+[issues-url]: https://github.com/HridayHegde/Cake-Your-Way/issues
+[license-shield]: https://img.shields.io/github/license/HridayHegde/Cake-Your-Way.svg?style=flat-square
+[license-url]: https://github.com/HridayHegde/Cake-Your-Way/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: www.linkedin.com/in/hridayhegde
 [product-screenshot]: ReadmeAssets/project_ss.jpg
