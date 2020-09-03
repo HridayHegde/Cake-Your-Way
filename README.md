@@ -136,7 +136,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/HegdeHriday) - email
+Hriday Hegde - [LinkedIn](https://www.linkedin.com/in/hridayhegde) - hridayhegde1999@gmail.com
 
 Project Link: [https://github.com/HridayHegde/Cake-Your-Way](https://github.com/HridayHegde/Cake-Your-Way)
 
@@ -165,5 +165,5 @@ Project Link: [https://github.com/HridayHegde/Cake-Your-Way](https://github.com/
 [license-shield]: https://img.shields.io/github/license/HridayHegde/Cake-Your-Way.svg?style=flat-square
 [license-url]: https://github.com/HridayHegde/Cake-Your-Way/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/reubence/
+[linkedin-url]: https://www.linkedin.com/in/hridayhegde
 [product-screenshot]: ReadmeAssets/project_ss.jpg
