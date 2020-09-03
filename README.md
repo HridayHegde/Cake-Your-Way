@@ -153,7 +153,8 @@ Project Link: [https://github.com/HridayHegde/Cake-Your-Way](https://github.com/
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-
+[last-activity-shield]: https://img.shields.io/github/last-commit/HridayHegde/Cake-Your-Way?style=flat-square
+[last-activity-url]: https://github.com/HridayHegde
 [contributors-shield]: https://img.shields.io/github/contributors/HridayHegde/Cake-Your-Way.svg?style=flat-square
 [contributors-url]: https://github.com/HridayHegde/Cake-Your-Way/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/HridayHegde/Cake-Your-Way.svg?style=flat-square
