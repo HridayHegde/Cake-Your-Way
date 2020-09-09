@@ -60,8 +60,7 @@
   <p align="center">
 
 Custom Made Cakes, doesn't that sound too good to be true xD. Well though we dont make those cakes we did build the website:D. Who knows in the future maybe we'll make those good and yummy cakes too.
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`HridayHegde`, `Cake-Your-Way_name`, `twitter_handle`, `email`
+
 
 
 ### Built With
@@ -129,7 +128,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Currently not planned for open source release but you can ask for code usage in projects.
 
 
 
